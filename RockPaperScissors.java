@@ -14,10 +14,10 @@ public class RockPaperScissors {
     respuesta = scan.nextLine();
 
     if(respuesta.equals("yes")){
-        System.out.println("Excelente empecemos a jugar");
+        System.out.println("Excelent let's play!");//keep everything in english
         String seleccionJugador = scan.nextLine();
         String seleccionComput = scan.nextLine();
-        String resultado = resultado(seleccionJugador, seleccionComput);
+        String resultado = result(seleccionJugador, seleccionComput); //RB:cambie el metodo resultado (que no existia) a result que esta abajoi
 
     }
         {
@@ -46,14 +46,14 @@ public class RockPaperScissors {
 
 
     //Task 3  – Write a function where the computer picks a random choice.
-    public static void seleccionComput(){
+    public static String seleccionComput(){ //RB:cambie el metodo de void a string para que los returns no tengan que ser vacios
         double randomNumber = Math.random() *3; 
         int integer =(int) randomNumber;
 
 
         switch(integer){
             case 0: return "Piedra";
-            case 1: return  "Papel";
+            case 1: return "Papel";
             case 2: return "Tijeras";
             default: return ""; 
 
@@ -114,7 +114,7 @@ public class RockPaperScissors {
                 result = "Has Ganao Tio";
             } else if (seleccionJugador.equals("Papel") || seleccionComput.equals("Piedra")){
                 result = "Has Ganao Tio";
-            }else if (seleccionJugador.equals("Papel") || seleccion.seleccionComput.equals("Tijeras")){
+            }else if (seleccionJugador.equals("Papel") || seleccionComput.equals("Tijeras")){
                 result = "has perdido Tio";
 
             }else if(seleccionJugador.equals(seleccionComput)){
