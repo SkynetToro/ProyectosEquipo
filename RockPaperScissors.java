@@ -46,7 +46,20 @@ public class RockPaperScissors {
 
 
     //Task 3  – Write a function where the computer picks a random choice.
+    public static void seleccionComput(){
+        double randomNumber = Math.random() *3; 
+        int integer =(int) randomNumber;
 
+
+        switch(integer){
+            case 0: return "Piedra";
+            case 1: return  "Papel";
+            case 2: return "Tijeras";
+            default: return ""; 
+
+        }
+        
+    }
     /**
      * Function name: computerChoice - picks randomly between rock paper and scissors
      * @return a choice (String).
@@ -88,14 +101,33 @@ public class RockPaperScissors {
      *   
      */
 
-    public static String result(String yourChoice, String computerChoice) {
+    public static String result(String seleccionJugador, String seleccionComput) {
         String result = "";
+
+            if(seleccionJugador.equals("Piedra") || seleccionComput.equals("Papel")){
+                result ="has perdido Tio";
+            } else if (seleccionJugador.equals("Papel") || seleccionComput.equals("Tijeras")){
+                result = "Has perdido Tio";
+            } else if (seleccionJugador.equals("Tijeras") || seleccionComput.equals("Papel")){
+                result = "has Ganao Tio";
+            } else if(seleccionJugador.equals("Piedra") || seleccionComput.equals("Tijeras")){
+                result = "Has Ganao Tio";
+            } else if (seleccionJugador.equals("Papel") || seleccionComput.equals("Piedra")){
+                result = "Has Ganao Tio";
+            }else if (seleccionJugador.equals("Papel") || seleccion.seleccionComput.equals("Tijeras")){
+                result = "has perdido Tio";
+
+            }else if(seleccionJugador.equals(seleccionComput)){
+                result = "es un empate";
+            }
 
         return result;
       }
  
      //Task 5  – Write a function that prints your choice, the computer's, and the result.
-
+      public static void printresultados(){
+        
+      }
     /**
      * Name: printResult - It prints everything (your choice, computer choice, result)
      * @param yourChoice (String)
