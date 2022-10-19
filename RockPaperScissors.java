@@ -16,9 +16,9 @@ public class RockPaperScissors {
     if(respuesta.equals("yes")){
         System.out.println("Excelent let's play!");//keep everything in english
         String seleccionJugador = scan.nextLine();
-        String seleccionComput = scan.nextLine();
+        String seleccionComput = seleccionComput();
         String resultado = result(seleccionJugador, seleccionComput); //RB:cambie el metodo resultado (que no existia) a result que esta abajoi
-
+        printresultados(seleccionJugador, seleccionComput, resultado);
     }
         {
         
@@ -101,27 +101,38 @@ public class RockPaperScissors {
      *   
      */
 
-    public static String result(String seleccionJugador, String seleccionComput) {
-        String result = "";
-
+    public static String result(String seleccionJugador, String seleccionComput) { //este se puede mejorar usando mejor los ifs igual lo cambio luego
+        String resultado = "";
+            
             if(seleccionJugador.equals("Piedra") || seleccionComput.equals("Papel")){
-                result ="has perdido Tio";
-            } else if (seleccionJugador.equals("Papel") || seleccionComput.equals("Tijeras")){
-                result = "Has perdido Tio";
-            } else if (seleccionJugador.equals("Tijeras") || seleccionComput.equals("Papel")){
-                result = "has Ganao Tio";
-            } else if(seleccionJugador.equals("Piedra") || seleccionComput.equals("Tijeras")){
-                result = "Has Ganao Tio";
-            } else if (seleccionJugador.equals("Papel") || seleccionComput.equals("Piedra")){
-                result = "Has Ganao Tio";
-            }else if (seleccionJugador.equals("Papel") || seleccionComput.equals("Tijeras")){
-                result = "has perdido Tio";
-
-            }else if(seleccionJugador.equals(seleccionComput)){
-                result = "es un empate";
+                resultado ="you lose!";
             }
-
-        return result;
+            else if(seleccionJugador.equals("Piedra") || seleccionComput.equals("Tijeras")){
+                resultado = "you win!";
+            }
+            else if (seleccionJugador.equals("Piedra") || seleccionComput.equals("Piedra")){
+                resultado = "it is a tie!";
+            }
+            if(seleccionJugador.equals("Papel") || seleccionComput.equals("Papel")){
+                resultado ="it is a tie";
+            }
+            else if(seleccionJugador.equals("Papel") || seleccionComput.equals("Tijeras")){
+                resultado = "you lose!";
+            }
+            else if (seleccionJugador.equals("Papel") || seleccionComput.equals("Piedra")){
+                resultado = "you win!";
+            }           
+            if(seleccionJugador.equals("Tijeras") || seleccionComput.equals("Papel")){
+                resultado ="you win!";
+            }
+            else if(seleccionJugador.equals("Tijeras") || seleccionComput.equals("Tijeras")){
+                resultado = "it is a tie";
+            }
+            else if (seleccionJugador.equals("Tijeras") || seleccionComput.equals("Piedra")){
+                resultado = "you lose!";
+            }
+            
+        return resultado;
       }
  
      //Task 5  – Write a function that prints your choice, the computer's, and the result.
