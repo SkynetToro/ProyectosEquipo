@@ -125,8 +125,10 @@ public class RockPaperScissors {
       }
  
      //Task 5  – Write a function that prints your choice, the computer's, and the result.
-      public static void printresultados(){
-        
+      public static void printresultados(String seleccionJugador, String seleccionComput, String resultado){
+        System.out.println("\nEscogiste: " + seleccionJugador);
+        System.out.println("\nCPU Escogio: " + seleccionComput);
+        System.out.println(resultado);
       }
     /**
      * Name: printResult - It prints everything (your choice, computer choice, result)
