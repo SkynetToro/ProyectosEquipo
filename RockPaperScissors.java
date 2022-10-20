@@ -15,14 +15,15 @@ public class RockPaperScissors {
 
     if(respuesta.equals("yes")){
         System.out.println("Excelent let's play!");//keep everything in english
-        String seleccionJugador = scan.nextLine();
+        System.out.println("Rock - Paper - Scissors ... Shoot");
         String seleccionComput = seleccionComput();
+        String seleccionJugador = scan.nextLine();
         String resultado = result(seleccionJugador, seleccionComput); //RB:cambie el metodo resultado (que no existia) a result que esta abajoi
         printresultados(seleccionJugador, seleccionComput, resultado);
+    }else{
+        System.out.println("Well we will play in another time! cya");
     }
-        {
-        
-    }
+       
 
 
     /*Task 2: Set up the game
@@ -39,7 +40,7 @@ public class RockPaperScissors {
        • else:
              – print: Darn, some other time...!        
     */
-              
+      
 
         scan.close();
     }
